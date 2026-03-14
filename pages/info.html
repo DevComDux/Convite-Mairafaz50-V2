@@ -20,17 +20,49 @@
     <div class="vhs-overlay"></div>
 
     <div class="main-content1">
-        <!-- SEÇÃO 6 INFORMAÇÕES (inclui traje) -->
-        <section class="section" id="info">
-            <h2 class="neon-title"><i class="fa-solid fa-info"></i> INFORMAÇÕES</h2>
-            <div class="retro-card">
-                <ul class="info-lista">
-                    <li><i class="fas fa-ban"></i> Não será permitido levar bebidas ou comidas.</li>
-                    <li><i class="fas fa-cart-plus"></i> Haverá venda no local.</li>
-                    <li><i class="fas fa-tshirt"></i> Venha Caracterizado com traje anos 70/80/90 ou semelhante</li>
-                </ul>
+        <!-- SEÇÃO 1 (layout da imagem) -->
+        <section class="section" id="inicio">
+            <h2 class="neon-title">INFORMAÇÕES</h2>
+            <div class="retro-card2">
+                <div class="secao1-conteudo">
+                    <div class="destaque1">VOCÊ ESTÁ CONVIDADO</div>
+                    <div class="destaque2">PARA UM FLASHBACK INESQUECÍVEL</div>
+                    <div class="revivendo">50 ANOS DA MÁIRA</div>
+                    <div class="destaque2">REVIVENDO OS GRANDES SUCESSOS DOS ANOS 60/ 70/ 80...</div>
+                </div>
             </div>
+            <div class="retro-card3">
+                <ul class="info-lista">
+                    <li><i class="fas fa-compact-disc"></i> Este momento especial será comemorado durante o tradicional Flashback do ECC, um evento que acontece anualmente e reúne música, alegria e muita nostalgia.</li>
+                    <li><i class="fas fa-ticket"></i> Foram adquiridos 100 ingressos, que serão destinados aos convidados que confirmarem presença através do formulário de confirmação.</li>
+                    <li><i class="fas fa-ban"></i> Não será permitido levar bebidas ou comidas.</li>
+                    <li><i class="fas fa-cart-plus"></i> Haverá venda de comida e bebida no local.</li>
+                    <li><i class="fas fa-tshirt"></i> Venha Caracterizado com traje anos 60/70/80 ou semelhante</li>
+                    <li><i class="fas fa-face-grin-beam"></i> Será uma alegria contar com você para celebrar essa data tão especial! Confirme sua presença logo abaixo.</li>
+                </ul>
+
+                <!-- Botões de navegação (ícones + nome) que levam às seções -->
+                <div class="nav-buttons2">
+                    <a href="confirmacao.html" class="nav-btn2"><i class="fas fa-check-circle"></i><span>CONFIRMAR PRESENÇA</span></a>
+                </div>
+                <div class="nav-buttons3">
+                    <a href="https://www.google.com/maps/place/Instituto+São+José/@-15.6544346,-47.7987415,17z/data=!4m6!3m5!1s0x935a3f7900aae351:0xaf174743a5a2d04!8m2!3d-15.6544838!4d-47.7972221!16s%2Fg%2F1ptx77grn?authuser=0&entry=ttu&g_ep=EgoyMDI2MDMwOC4wIKXMDSoASAFQAw%3D%3D" class="nav-btn3" target="_blank"><i class="fas fa-map-marker-alt"></i><span>LOCALIZAÇÃO</span></a>
+                </div>
+                <div class="nav-buttons">
+                    <a href="tunel.html" class="nav-btn"><i class="fas fa-image"></i><span>TÚNEL DO TEMPO</span></a>
+                    <a href="cardapio.html" class="nav-btn"><i class="fas fa-utensils"></i><span>CARDÁPIO</span></a>
+                    <a href="presente.html" class="nav-btn"><i class="fas fa-gift"></i><span>PRESENTES</span></a>
+                </div>
+            </div>
+
         </section>
+
+        <!-- player música -->
+        <div class="music-player"><button class="music-btn" id="playPauseBtn"><i class="fas fa-play"></i></button><span
+                style="color:lime;">🎵 Flashback</span><audio id="bgAudio" loop>
+                <source src="../msc/Passinho.mp3" type="audio/mpeg">
+            </audio>
+        </div>
     </div>
 
     <footer>
