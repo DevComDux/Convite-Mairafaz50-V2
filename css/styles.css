@@ -417,6 +417,24 @@ animation: appearAfter 0.1s forwards;
     border-bottom: 2px dashed magenta;
 }
 
+.data {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    font-weight: 900;
+    color: #ffff00;
+    text-shadow: 0 0 20px magenta, 0 0 40px cyan;
+    margin: 15px 0 5px;
+    border-top: 2px dashed cyan;
+    padding: 10px 0 0;
+    text-align: center;
+}
+
+.sabado {
+    font-size: clamp(1.3rem, 4.5vw, 2rem);
+    color: #ffffff;
+    text-shadow: 0 0 15px cyan;
+    text-align: center;
+}
+
 /* botões de navegação 1 (ícones com nome) */
 .nav-buttons1 {
     display: flex;
@@ -500,7 +518,7 @@ animation: appearAfter 0.1s forwards;
     border: 2px solid #0ff;
     border-radius: 30px 8px 30px 8px;
     padding: 10px 15px;
-    width: 150px;
+    width: 200px;
     height: 70px;
     cursor: pointer;
     transition: 0.2s;
@@ -513,6 +531,7 @@ animation: appearAfter 0.1s forwards;
     backdrop-filter: blur(5px);
     text-align: center;
     transition: all 0.3s ease;
+    animation: neonPulse1 1.5s infinite alternate;
 }
 
 .nav-btn2 i {
@@ -553,20 +572,20 @@ animation: appearAfter 0.1s forwards;
     flex-wrap: wrap;
     justify-content: center;
     gap: clamp(10px, 2vw, 20px);
-    margin: 30px 0 20px;
+    margin: 15px 0 2px;
+    border-bottom: 2px dashed magenta;
 }
 
 .nav-btn3 {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.5);
     border: 2px solid #0ff;
     border-radius: 30px 8px 30px 8px;
     padding: 10px 15px;
-    width: 150px;
-    height: 70px;
+    width: 100%;
+    height: 35px;
     cursor: pointer;
     transition: 0.2s;
     box-shadow: 0 0 15px cyan;
@@ -578,11 +597,12 @@ animation: appearAfter 0.1s forwards;
     backdrop-filter: blur(5px);
     text-align: center;
     transition: all 0.3s ease;
+    margin: 0 0 20px;
 }
 
 .nav-btn3 i {
     font-size: clamp(1.4rem, 4vw, 2rem);
-    margin-bottom: 5px;
+    margin-right: 5px;
     text-shadow: 0 0 5px rgb(42, 38, 38);
 }
 
@@ -607,6 +627,72 @@ animation: appearAfter 0.1s forwards;
 
 .nav-btn3:link,
 .nav-btn3:visited{
+    color:#0ff;
+    background: rgba(0,0,0,0.5);
+    border-color:#0ff;
+}
+
+/* botões de navegação 4 (ícones com nome) */
+.nav-buttons4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: clamp(10px, 2vw, 20px);
+    margin: 15px 0 2px;
+    width: 100%;
+}
+
+.nav-btn4 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #0ff;
+    border-radius: 30px 8px 30px 8px;
+    padding: 10px 15px;
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 0 15px cyan;
+    text-decoration: none;
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-right: auto;
+}
+
+.nav-btn4 i {
+    font-size: clamp(1rem, 3vw, 2rem);
+    margin-right: 5px;
+    text-shadow: 0 0 5px rgb(42, 38, 38);
+}
+
+.nav-buttons4 .nav-btn4:nth-child(1) i{
+    color:#1100ff;
+}
+
+.nav-btn4:hover {
+    background: #ff00c1;
+    color: #000;
+    border-color: #ff00c1;
+    box-shadow: 0 0 30px #ff00c1;
+}
+
+.nav-btn4:hover i {
+    color: #fff;
+}
+
+.nav-btn4:active{
+    transform: scale(0.95);
+}
+
+.nav-btn4:link,
+.nav-btn4:visited{
     color:#0ff;
     background: rgba(0,0,0,0.5);
     border-color:#0ff;
@@ -721,6 +807,24 @@ box-shadow:
 
 }
 
+@keyframes neonPulse1 {
+
+0%,100%{
+box-shadow:
+0 0 5px #20c000,
+0 0 10px #20c000,
+0 0 20px #20c000;
+}
+
+50%{
+box-shadow:
+0 0 5px #2bff00,
+0 0 15px #2bff00,
+0 0 35px #2bff00;
+}
+
+}
+
 /* frase final da seção 1 */
 .frase-final-secao1 {
     font-size: clamp(1.2rem, 4vw, 2rem);
@@ -746,18 +850,31 @@ box-shadow:
     width: min(130px, 40vw);
 }
 
-.photo-frame {
-    width: 100%;
-    aspect-ratio: 7/9;
-    border: 4px solid #f0f;
-    box-shadow: 0 0 40px #0ff, inset 0 0 30px #ff0;
-    border-radius: 30px 5px 30px 5px;
-    background: linear-gradient(145deg, #2a0f3a, #0a142f);
+.photo-item1 {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 5px;
-    cursor: pointer;
+    width: min(280px, 100vw);
+}
+
+.photo-frame{
+    width:100%;
+    border:4px solid #f0f;
+    box-shadow:0 0 40px #0ff, inset 0 0 30px #ff0;
+    border-radius:30px 5px 30px 5px;
+    background:linear-gradient(145deg,#2a0f3a,#0a142f);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.photo-frame img{
+    width:100%;
+    height:auto;
+    max-height:420px;
+    object-fit:contain;
+    display:block;
+    border-radius:30px 5px 30px 5px;
 }
 
 .photo-frame:active {
@@ -766,6 +883,14 @@ box-shadow:
 
 .photo-frame.click-animate {
     animation: photoClick 0.4s ease-out;
+}
+
+.photo-frame img{
+    transition:transform .4s;
+}
+
+.photo-frame:hover img{
+    transform:scale(1.1);
 }
 
 @keyframes photoClick {
@@ -840,6 +965,11 @@ box-shadow:
     width: 100%;
 }
 
+.presentes-lista p{
+    font-size: clamp(1rem, 4vw, 2.5rem);
+    text-align: center;
+}
+
 .presentes-lista li {
     margin: 15px 0;
     background: rgba(255, 0, 200, 0.15);
@@ -868,6 +998,17 @@ box-shadow:
 .section h2{
     animation: neonTextPulse 2s infinite alternate;
     font-size: clamp(1.5rem, 8vw, 4rem);
+}
+
+.section h3.title{
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.section h3.title1{
+    font-size: clamp(1rem, 2vw, 4rem);
+    text-align: center;
 }
 
 .info-lista {

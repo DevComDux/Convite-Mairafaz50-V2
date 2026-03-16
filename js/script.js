@@ -2,6 +2,16 @@
 
     const splash = document.getElementById('splash');
     const sc = document.getElementById('splashCounter');
+    const audio = document.getElementById('bgAudio'), btn = document.getElementById('playPauseBtn');
+    function iniciarMusica() {
+        if (!audio) return;
+
+        audio.volume = 0.5;
+
+        audio.play().then(() => {
+            if (btn) btn.innerHTML = '<i class="fas fa-pause"></i>';
+        }).catch(()=>{});
+    }
 
     /* se já mostrou o splash nesta sessão */
     if (sessionStorage.getItem("splashJaMostrou")) {
@@ -24,6 +34,22 @@
                 if (counter <= 0) {
                     clearInterval(i);
                     if (splash) splash.style.display = "none";
+
+                    if (audio) {
+                        audio.volume = 0.5;
+
+                        const tocar = () => {
+                            audio.play().then(() => {
+                                if (btn) btn.innerHTML = '<i class="fas fa-pause"></i>';
+                            }).catch(err => console.log("Erro ao tocar:", err));
+                        };
+
+                        if (audio.readyState >= 2) {
+                            tocar();
+                        } else {
+                            audio.addEventListener("canplay", tocar, { once: true });
+                        }
+                    }
                 }
 
             }, 1000);
@@ -52,11 +78,14 @@
     }
 
     updateCountdown(); setInterval(updateCountdown, 1000);
-
-
-    const audio = document.getElementById('bgAudio'), btn = document.getElementById('playPauseBtn'); 
+ 
     if (audio && btn) { 
-        audio.volume = 0.5; 
+        audio.volume = 0.5;
+        if (sessionStorage.getItem("splashJaMostrou")) {
+
+            iniciarMusica();
+        }
+
         btn.addEventListener('click', () => { 
             if (audio.paused) { 
                 audio.play().then(() => { 
