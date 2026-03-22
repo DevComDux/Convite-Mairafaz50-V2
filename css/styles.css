@@ -1230,7 +1230,7 @@ box-shadow:
     width: 100%;
 }
 
-.presentes-lista p{
+.presentes-lista .ou{
     font-size: clamp(1rem, 4vw, 2.5rem);
     text-align: center;
 }
@@ -1245,6 +1245,13 @@ box-shadow:
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.presentes-lista li a {
+    color: #0ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 /* ---- SEÇÃO 5 LOCALIZAÇÃO (NOVA) ---- */
